@@ -1,5 +1,5 @@
 /**
- * Solarized Dark theme for reveal.js.
+ * Solarized Dark themeImg for reveal.js.
  * Author: Achim Staebler
  */
 
@@ -11,7 +11,7 @@
 
 
 
-// Include theme-specific fonts
+// Include themeImg-specific fonts
 @import url(../../lib/font/league-gothic/league-gothic.css);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 
@@ -41,7 +41,7 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
-// Override theme settings (see ../template/settings.scss)
+// Override themeImg settings (see ../template/settings.scss)
 $mainColor: $base1;
 $headingColor: $base2;
 $headingTextShadow: none;

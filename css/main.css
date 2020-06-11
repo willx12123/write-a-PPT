@@ -40,7 +40,7 @@
   top: 0;
 
   width: 180px;
-  height: 100vw;
+  height: 100vh;
 
   z-index: 100;
   background-color: #252F2D;
@@ -97,7 +97,7 @@
   margin: 8px;
 }
 
-.menu .detail .content  {
+.menu .detail .content {
   transform: translateX(calc(100% + 180px));
   opacity: 0;
   transition: 0.3s ease-in-out;
@@ -143,13 +143,13 @@
 }
 
 .menu .detail .content .body button {
-  background-color: #48484e;
+  background-color: #48484E;
   padding: 6px 14px;
   border-radius: 8px;
   border: none;
   outline: none;
 
-  color: #d9dfdf;
+  color: #D9DFDF;
   font-size: 16px;
 
   opacity: 0.72;
@@ -158,4 +158,33 @@
 
 .menu .detail .content .body button:hover {
   opacity: 1;
+}
+
+.menu .detail .content .body .themes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menu .detail .content .body .themes figure {
+  padding: 12px;
+  border: 4px solid transparent;
+  transition: border 0.3s;
+  color: #ABABAB;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.72;
+  cursor: pointer;
+}
+
+.menu .detail .content .body .themes figure.select {
+  opacity: 1;
+  border: 4px solid #FFFFFF;
+}
+
+.menu .detail .content .body .themes figure img {
+  width: 200px;
+  height: 100px;
+  margin: 12px 0;
+  object-fit: cover;
 }

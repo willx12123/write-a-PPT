@@ -1,8 +1,8 @@
 /**
- * Blood theme for reveal.js
+ * Blood themeImg for reveal.js
  * Author: Walther http://github.com/Walther
  *
- * Designed to be used with highlight.js theme
+ * Designed to be used with highlight.js themeImg
  * "monokai_sublime.css" available from
  * https://github.com/isagalaev/highlight.js/
  *
@@ -15,11 +15,11 @@
 @import "../template/settings";
 // ---------------------------------------------
 
-// Include theme-specific fonts
+// Include themeImg-specific fonts
 
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
 
-// Colors used in the theme
+// Colors used in the themeImg
 $blood: #a23;
 $coal: #222;
 $codeBackground: #23241f;
@@ -35,7 +35,7 @@ $headingFont: Ubuntu, 'sans-serif';
 $headingTextShadow: 2px 2px 2px $coal;
 
 // h1 shadow, borrowed humbly from 
-// (c) Default theme by Hakim El Hattab
+// (c) Default themeImg by Hakim El Hattab
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
 
 // Links
@@ -51,7 +51,7 @@ $selectionColor: #fff;
 @import "../template/theme";
 // ---------------------------------------------
 
-// some overrides after theme template import
+// some overrides after themeImg template import
 
 .reveal p {
     font-weight: 300;

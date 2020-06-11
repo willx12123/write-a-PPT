@@ -109,13 +109,12 @@ const reloadMarkdown = (markdown) => {
 
 const App = {
   init() {
-    [...arguments].forEach(Module => Module.init());
+    [...arguments].forEach((Module) => Module.init());
   }
 };
 
 const Menu = {
   init() {
-    console.log('Menu init...');
     this.settingIcon = $('.control .icon-setting');
     this.menu = $('.menu');
     this.closeIcon = $('.menu .icon-close');
@@ -130,13 +129,13 @@ const Menu = {
     this.closeIcon.addEventListener('click', () => {
       this.menu.classList.remove('open');
     });
-    this.tabs.forEach(tab => {
+    this.tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        this.tabs.forEach(node => {
+        this.tabs.forEach((node) => {
           node.classList.remove('active');
           tab.classList.add('active');
           let index = [...this.tabs].indexOf(tab);
-          this.contents.forEach(node => {
+          this.contents.forEach((node) => {
             node.classList.remove('active');
             this.contents[index].classList.add('active');
           });
@@ -148,14 +147,13 @@ const Menu = {
 
 const Editor = {
   init() {
-    console.log('Editor init...');
-    this.markdown = localStorage.getItem('markdown') || '# 「写」一个PPT';
+    this.markdown = localStorage.getItem('markdown') || '# 「写」一个 PPT';
     this.editInput = $('.editor textarea');
     this.saveBtn = $('.editor button');
-    this.bind();
+    this.bindEvent();
     this.start();
   },
-  bind() {
+  bindEvent() {
     this.saveBtn.addEventListener('click', () => {
       reloadMarkdown(this.editInput.value);
     });
@@ -167,6 +165,39 @@ const Editor = {
   }
 };
 
+const Theme = {
+  init() {
+    this.figures = $$('.theme figure');
+    console.log(this.figures);
+    this.bindEvent();
+    this.loadTheme();
+  },
+  bindEvent() {
+    this.figures.forEach((figure) => {
+      figure.addEventListener('click', () => {
+        this.figures.forEach((item) => {
+          item.classList.remove('select');
+        });
+        figure.classList.add('select');
+        this.setTheme(figure.dataset.theme);
+        console.log(figure.dataset.theme);
+      });
+    });
+  },
+  setTheme(theme) {
+    localStorage.setItem('theme', theme);
+    location.reload();
+  },
+  loadTheme() {
+    const theme = localStorage.getItem('theme') || 'black';
+    const link = document.createElement('link');
+    link.id = 'theme';
+    link.rel = 'stylesheet';
+    link.href = `css/theme/${ theme }.css`;
+    document.head.appendChild(link);
+  }
+};
+
 window.addEventListener('load', () => {
-  App.init(Menu, Editor);
+  App.init(Menu, Editor, Theme);
 });
