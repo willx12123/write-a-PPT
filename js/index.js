@@ -1,3 +1,6 @@
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+
 const initial = () => {
   Reveal.initialize({
     controls: true,
@@ -26,23 +29,6 @@ const initial = () => {
       { src: 'plugin/notes/notes.js', async: true }
     ]
   });
-};
-
-const startUp = () => {
-  const template = `
-    # 写一个PPT
-
-    让PPT制作不再花费你所有的时间
-    ## Markdown support
-    Write content using inline or external Markdown.
-    ## 我是二级标题
-    请点击右下角👉的按钮
-    或是按下键盘下的右键
-    ## 我是三级标题
-    可以点击右下角的按钮或者按下键盘上的下键
-    ### 我是三级标题
-  `;
-  convert(localStorage.getItem('markdown') || template);
 };
 
 const isParent = (markdown) => (/^#{1,2}(?!#)/).test(markdown);
@@ -113,7 +99,7 @@ const arrayToHtml = (arr) => {
 
 const convert = (markdown) => {
   const arr = markdownToArray(markdown);
-  document.querySelector('.slides').innerHTML = arrayToHtml(arr);
+  $('.slides').innerHTML = arrayToHtml(arr);
 };
 
 const reloadMarkdown = (markdown) => {
@@ -121,7 +107,66 @@ const reloadMarkdown = (markdown) => {
   location.reload();
 };
 
+const App = {
+  init() {
+    [...arguments].forEach(Module => Module.init());
+  }
+};
+
+const Menu = {
+  init() {
+    console.log('Menu init...');
+    this.settingIcon = $('.control .icon-setting');
+    this.menu = $('.menu');
+    this.closeIcon = $('.menu .icon-close');
+    this.tabs = $$('.menu .tab');
+    this.contents = $$('.menu .content');
+    this.bindEvent();
+  },
+  bindEvent() {
+    this.settingIcon.addEventListener('click', () => {
+      this.menu.classList.add('open');
+    });
+    this.closeIcon.addEventListener('click', () => {
+      this.menu.classList.remove('open');
+    });
+    this.tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        this.tabs.forEach(node => {
+          node.classList.remove('active');
+          tab.classList.add('active');
+          let index = [...this.tabs].indexOf(tab);
+          this.contents.forEach(node => {
+            node.classList.remove('active');
+            this.contents[index].classList.add('active');
+          });
+        });
+      });
+    });
+  }
+};
+
+const Editor = {
+  init() {
+    console.log('Editor init...');
+    this.markdown = localStorage.getItem('markdown') || '# 「写」一个PPT';
+    this.editInput = $('.editor textarea');
+    this.saveBtn = $('.editor button');
+    this.bind();
+    this.start();
+  },
+  bind() {
+    this.saveBtn.addEventListener('click', () => {
+      reloadMarkdown(this.editInput.value);
+    });
+  },
+  start() {
+    this.editInput.value = this.markdown;
+    convert(this.markdown);
+    initial();
+  }
+};
+
 window.addEventListener('load', () => {
-  startUp();
-  initial();
+  App.init(Menu, Editor);
 });

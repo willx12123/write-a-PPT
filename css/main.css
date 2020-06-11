@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+.control {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+
+  transition: 0.3s;
+  z-index: 1;
+  opacity: 0;
+}
+
+.control:hover {
+  opacity: 1;
+}
+
+.control .icon-setting {
+  width: 56px;
+  height: 56px;
+  margin: 32px;
+
+  font-size: 56px;
+  color: #FFFFFF;
+
+  cursor: pointer;
+}
+
+.menu {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 180px;
+  height: 100vw;
+
+  z-index: 100;
+  background-color: #252F2D;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: "PingFang SC", "Helvetica Neue", "Microsoft Yahei", serif;
+}
+
+.menu.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu .icon-close {
+  position: absolute;
+  right: 24px;
+  top: 20px;
+
+  font-size: 20px;
+  color: #FFFFFF;
+
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+}
+
+.menu .detail {
+  margin-top: 56px;
+}
+
+.menu .detail .tab {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  color: #A2A2A2;
+
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu .detail .tab:hover {
+  color: #FFFFFF;
+  background-color: #161C1A;
+}
+
+.menu .detail .tab.active {
+  color: #FFFFFF;
+}
+
+.menu .detail .tab .iconfont {
+  margin: 8px;
+}
+
+.menu .detail .content  {
+  transform: translateX(calc(100% + 180px));
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+
+  width: calc(100vw - 180px);
+  height: 100vh;
+
+  background-color: #212A29;
+  position: absolute;
+  left: 180px;
+  top: 0;
+}
+
+.menu.open .detail .content.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu .detail .content .header {
+  font-size: 32px;
+  padding: 16px 40px;
+  border: 1px solid #425351;
+}
+
+.menu .detail .content .body {
+  padding: 24px;
+  height: calc(100% - 100px);
+}
+
+.menu .detail .content .body textarea {
+  padding: 10px 16px;
+  width: 100%;
+  height: 70%;
+  margin-bottom: 24px;
+
+  background-color: #161C1A;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.menu .detail .content .body button {
+  background-color: #48484e;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  color: #d9dfdf;
+  font-size: 16px;
+
+  opacity: 0.72;
+  cursor: pointer;
+}
+
+.menu .detail .content .body button:hover {
+  opacity: 1;
+}

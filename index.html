@@ -25,7 +25,8 @@
 
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="lib/css/monokai.css" />
-
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1879665_g5yte3st5xr.css">
+  <link rel="stylesheet" href="css/main.css">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement('link');
@@ -43,6 +44,36 @@
 </head>
 
 <body>
+<div class="control">
+  <div class="iconfont icon-setting"></div>
+</div>
+<div class="menu">
+  <div class="iconfont icon-close"></div>
+  <div class="detail">
+    <div class="tab edit active"><i class="iconfont icon-edit"></i>内容编辑</div>
+    <div class="tab theme"><i class="iconfont icon-theme"></i>主题与特效</div>
+    <div class="tab pdf"><i class="iconfont icon-download"></i>下载为PDF</div>
+    <div class="content active">
+      <div class="header">编辑</div>
+      <div class="body editor">
+        <label for=""></label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>保存</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">主题与特效</div>
+      <div class="body editor">
+
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">下载PDF</div>
+      <div class="body editor">
+      </div>
+    </div>
+  </div>
+</div>
 <div class="reveal">
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
@@ -51,6 +82,6 @@
 </div>
 
 <script src="js/reveal.js"></script>
-<script src="./index.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
