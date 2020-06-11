@@ -147,7 +147,11 @@ const Menu = {
 
 const Editor = {
   init() {
-    this.markdown = localStorage.getItem('markdown') || '# 「写」一个 PPT';
+    const tpl = `
+      ## 「写」
+      **一个 PPT**
+    `;
+    this.markdown = localStorage.getItem('markdown') || tpl;
     this.editInput = $('.editor textarea');
     this.saveBtn = $('.editor button');
     this.bindEvent();
@@ -168,7 +172,6 @@ const Editor = {
 const Theme = {
   init() {
     this.figures = $$('.theme figure');
-    console.log(this.figures);
     this.bindEvent();
     this.loadTheme();
   },
@@ -195,6 +198,14 @@ const Theme = {
     link.rel = 'stylesheet';
     link.href = `css/theme/${ theme }.css`;
     document.head.appendChild(link);
+    this.figures.forEach((figure) => {
+      if (figure.dataset.theme === theme) {
+        this.figures.forEach((item) => {
+          item.classList.remove('select');
+        });
+        figure.classList.add('select');
+      }
+    });
   }
 };
 
