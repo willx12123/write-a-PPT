@@ -245,7 +245,7 @@ const Print = {
     link.rel = 'stylesheet';
     if (window.location.search.match(/print-pdf/gi)) {
       link.href = 'css/print/pdf.css';
-      setTimeout(() => window.print(), 200);
+      setTimeout(() => window.print(), 1000);
     } else {
       link.href = 'css/print/paper.css';
     }
