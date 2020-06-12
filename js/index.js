@@ -5,10 +5,12 @@ const initial = () => {
   Reveal.initialize({
     controls: true,
     progress: true,
-    center: true,
+    center:
+      localStorage.getItem('align') === 'center' ||
+      !localStorage.getItem('align'),
     hash: true,
 
-    transition: 'slide', // none/fade/slide/convex/concave/zoom
+    transition: localStorage.getItem('transition') || 'slide', // none/fade/slide/convex/concave/zoom
 
     dependencies: [
       {
@@ -37,7 +39,7 @@ const isChild = (markdown) => (/^#{3}(?!#)/).test(markdown);
 
 const markdownToArray = (markdown) => {
   return markdown
-    .split(/\n(?=\s*#)/)
+    .split(/\n(?=\s*#{1,3}[^#])/)
     .filter(item => item !== '')
     .map(item => item.trim());
 };
@@ -147,10 +149,7 @@ const Menu = {
 
 const Editor = {
   init() {
-    const tpl = `
-      ## 「写」
-      **一个 PPT**
-    `;
+    const tpl = '# 「写」\n#### 一个 PPT';
     this.markdown = localStorage.getItem('markdown') || tpl;
     this.editInput = $('.editor textarea');
     this.saveBtn = $('.editor button');
@@ -172,6 +171,9 @@ const Editor = {
 const Theme = {
   init() {
     this.figures = $$('.theme figure');
+    this.transition = $('.theme .transition');
+    this.align = $('.theme .align');
+    this.reveal = $('.reveal');
     this.bindEvent();
     this.loadTheme();
   },
@@ -185,6 +187,14 @@ const Theme = {
         this.setTheme(figure.dataset.theme);
         console.log(figure.dataset.theme);
       });
+    });
+    this.transition.addEventListener('change', () => {
+      localStorage.setItem('transition', this.transition.value);
+      location.reload();
+    });
+    this.align.addEventListener('change', () => {
+      localStorage.setItem('align', this.align.value);
+      location.reload();
     });
   },
   setTheme(theme) {
@@ -206,6 +216,9 @@ const Theme = {
         figure.classList.add('select');
       }
     });
+    this.transition.value = localStorage.getItem('transition') || 'slide';
+    this.align.value = localStorage.getItem('align') || 'center';
+    this.reveal.classList.add(this.align.value);
   }
 };
 

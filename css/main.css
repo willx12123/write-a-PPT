@@ -104,6 +104,8 @@
 
   width: calc(100vw - 180px);
   height: 100vh;
+  padding-bottom: 30px;
+  overflow: auto;
 
   background-color: #212A29;
   position: absolute;
@@ -160,6 +162,12 @@
   opacity: 1;
 }
 
+.menu .detail .content .body h5 {
+  display: block;
+  margin-top: 16px;
+  font-size: 18px;
+}
+
 .menu .detail .content .body .themes {
   display: flex;
   flex-wrap: wrap;
@@ -187,4 +195,19 @@
   height: 100px;
   margin: 12px 0;
   object-fit: cover;
+}
+
+.menu .detail .content .body select {
+  margin: 16px;
+  padding: 2px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.reveal.left section {
+  text-align: left;
+}
+
+.reveal.left .slides > section:first-child {
+  text-align: center;
 }

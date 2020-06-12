@@ -2,8 +2,8 @@
  * Solarized Light themeImg for reveal.js.
  * Author: Achim Staebler
  */
-@import url(../../lib/font/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(../../lib/font/qingmu/qing-ke-mu.css);
+
 /**
  * Solarized colors by Ethan Schoonover
  */
@@ -15,23 +15,23 @@ html * {
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #fdf6e3;
-  background-color: #fdf6e3; }
+  background: #FDF6E3;
+  background-color: #FDF6E3; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
-  font-size: 40px;
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
+  font-size: 36px;
   font-weight: normal;
-  color: #657b83; }
+  color: #657B83; }
 
 ::selection {
-  color: #fff;
-  background: #d33682;
+  color: #FFFFFF;
+  background: #D33682;
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #fff;
-  background: #d33682;
+  color: #FFFFFF;
+  background: #D33682;
   text-shadow: none; }
 
 .reveal .slides section,
@@ -49,8 +49,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #586e75;
-  font-family: "League Gothic", Impact, sans-serif;
+  color: #586E75;
+  font-family: "FZQKBYSJW--GB1-0", "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
@@ -76,9 +76,11 @@ body {
 /*********************************************
  * OTHER
  *********************************************/
-.reveal p {
+.reveal p, .reveal ul li {
   margin: 20px 0;
-  line-height: 1.3; }
+  font-size: 0.65em;
+  line-height: 1.3;
+}
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
@@ -213,20 +215,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #268bd2;
+  color: #268BD2;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #78b9e6;
+  color: #78B9E6;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
-  color: #fff;
-  background: #1a6091; }
+  color: #FFFFFF;
+  background: #1A6091; }
 
 /*********************************************
  * IMAGES
@@ -234,7 +236,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #657b83;
+  border: 4px solid #657B83;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
@@ -248,21 +250,21 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #268bd2;
+  border-color: #268BD2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #268bd2; }
+  color: #268BD2; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #268bd2; }
+  color: #268BD2; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -274,4 +276,5 @@ body {
  *********************************************/
 @media print {
   .backgrounds {
-    background-color: #fdf6e3; } }
+    background-color: #FDF6E3; }
+}

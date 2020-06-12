@@ -2,8 +2,7 @@
  * Solarized Dark themeImg for reveal.js.
  * Author: Achim Staebler
  */
-@import url(../../lib/font/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(../../lib/font/qingmu/qing-ke-mu.css);
 /**
  * Solarized colors by Ethan Schoonover
  */
@@ -19,10 +18,10 @@ body {
   background-color: #002b36; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
-  font-size: 40px;
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
+  font-size: 36px;
   font-weight: normal;
-  color: #93a1a1; }
+  color: #93A1A1; }
 
 ::selection {
   color: #fff;
@@ -49,8 +48,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eee8d5;
-  font-family: "League Gothic", Impact, sans-serif;
+  color: #EEE8D5;
+  font-family: "FZQKBYSJW--GB1-0", "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;

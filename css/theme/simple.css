@@ -5,8 +5,6 @@
  * This themeImg is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }
 
@@ -18,10 +16,10 @@ body {
   background-color: #fff; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #000; }
+  color: #000000; }
 
 ::selection {
   color: #fff;
@@ -48,8 +46,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #000;
-  font-family: "News Cycle", Impact, sans-serif;
+  color: #000000;
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;

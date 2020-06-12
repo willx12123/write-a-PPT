@@ -3,8 +3,6 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 .reveal a {
   line-height: 1.3em; }
 
@@ -22,10 +20,10 @@ body {
   background-color: #f7fbfc; }
 
 .reveal {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #333; }
+  color: #333333; }
 
 ::selection {
   color: #fff;
@@ -52,8 +50,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #333;
-  font-family: "Quicksand", sans-serif;
+  color: #333333;
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft Yahei", sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.08em;
