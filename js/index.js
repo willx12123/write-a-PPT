@@ -149,7 +149,16 @@ const Menu = {
 
 const Editor = {
   init() {
-    const tpl = '# 「写」\n#### 一个 PPT';
+    const tpl =
+      '# 「写」\n#### 一个 PPT\n请按空格进入下一页\n' +
+      '## 当Markdown遇上PPT\n可点击右下角方向键切换幻灯片\n' +
+      '## #表示标题\n+ 一个#为一级标题\n+ 两个#为二级标题\n+ 以此类推\n\n请点击"下"按钮\n' +
+      '### 一二三级标题都会成为独立页面\n' +
+      '### 三级标题会被二级标题包裹\n三级成为二级的子页面\n子页面上下切换，同等级页面左右切换\n' +
+      '### 四级标题后都不会独立成为页面\n' +
+      '## 控制面板\n鼠标移至页面左上角会出现一个齿轮\n' +
+      '### 点击齿轮进入控制面板\n可修改PPT内容，主题与切换特效\n' +
+      '### 网页会自动保存您的数据直至被清空\n请及时在控制面板点击"下载PDF"';
     this.markdown = localStorage.getItem('markdown') || tpl;
     this.editInput = $('.editor textarea');
     this.saveBtn = $('.editor button');
