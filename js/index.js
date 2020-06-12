@@ -222,6 +222,37 @@ const Theme = {
   }
 };
 
+const Print = {
+  init() {
+    this.download = $('.download');
+    this.bindEvent();
+    this.start();
+
+  },
+  bindEvent() {
+    this.download.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.setAttribute('target', '_blank');
+      link.setAttribute(
+        'href',
+        location.href.replace(/#\//, '?print-pdf')
+      );
+      link.click();
+    });
+  },
+  start() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    if (window.location.search.match(/print-pdf/gi)) {
+      link.href = 'css/print/pdf.css';
+      setTimeout(() => window.print(), 200);
+    } else {
+      link.href = 'css/print/paper.css';
+    }
+    document.head.appendChild(link);
+  }
+};
+
 window.addEventListener('load', () => {
-  App.init(Menu, Editor, Theme);
+  App.init(Menu, Editor, Theme, Print);
 });

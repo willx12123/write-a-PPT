@@ -169,13 +169,15 @@
 }
 
 .menu .detail .content .body .themes {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .menu .detail .content .body .themes figure {
-  padding: 12px;
+  margin: 12px;
+  padding: 8px;
   border: 4px solid transparent;
   transition: border 0.3s;
   color: #ABABAB;
@@ -193,7 +195,6 @@
 .menu .detail .content .body .themes figure img {
   width: 200px;
   height: 100px;
-  margin: 12px 0;
   object-fit: cover;
 }
 
